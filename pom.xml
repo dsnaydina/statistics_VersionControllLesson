@@ -52,7 +52,26 @@
                             <goal>check</goal>
                         </goals>
                     </execution>
-
+                    <execution>
+                        <id>jacoco-check</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <rule>
+                                    <element>PACKAGE</element>
+                                    <limits>
+                                        <limit>
+                                            <counter>LINE</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>1.0</minimum>
+                                        </limit>
+                                    </limits>
+                                </rule>
+                            </rules>
+                        </configuration>
+                    </execution>
                 </executions>
                 <configuration>
                     <rules>
@@ -62,12 +81,12 @@
                                 <limit>
                                     <counter>INSTRUCTION</counter>
                                     <value>COVEREDRATIO</value>
-                                    <minimum>1.0</minimum>
+                                    <minimum>0.8</minimum>
                                 </limit>
                                 <limit>
                                     <counter>CLASS</counter>
                                     <value>MISSEDCOUNT</value>
-                                    <maximum>0</maximum>
+                                    <maximum>1.0</maximum>
                                 </limit>
                             </limits>
                         </rule>
